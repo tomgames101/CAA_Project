@@ -1,0 +1,11 @@
+{
+  "username": "testUser",
+  "password": "testPassword",
+  "tasks": [],
+  "collaborators": [
+    {
+      "username": "collabUser",
+      "mode": "edit"
+    }
+  ]
+}
