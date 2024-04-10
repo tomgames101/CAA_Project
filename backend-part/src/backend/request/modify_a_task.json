@@ -1,0 +1,10 @@
+{
+  "username": "userTest",
+  "password": "securePassword",
+  "taskId": 1,
+  "title": "Updated Title",
+  "description": "Updated task description.",
+  "date": "2024-05-02",
+  "startTime": "09:00",
+  "endTime": "10:00"
+}
