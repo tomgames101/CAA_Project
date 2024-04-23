@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import LoginForm from './front-end/components/LoginForm';
 import SignUpForm from './front-end/components/SignUpForm';
-import TasksView from './front-end/components/TaskView'; // Assurez-vous que ce composant existe
+import TasksView from './front-end/components/TaskView'; // Importez TasksView au lieu de AddTask
 import "./front-end/styles/App.css"
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
 
     const handleLoginSuccess = (username, password) => {
         console.log("Login Success:", username);
-        setUser({ username, tasks: [] }); // Assurez-vous que tasks est un tableau
+        setUser({ username,password, tasks: [] }); // Assurez-vous que tasks est un tableau
     };
 
     const [showSignUp, setShowSignUp] = useState(false);

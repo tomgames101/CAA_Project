@@ -44,6 +44,17 @@ const authenticate = (req, res, next) => {
     req.user = user;
     next();
 };
+const authenticateQuery= (req, res, next) => {
+    const { username, password } = req.query;
+    console.log(username, password);
+    const user = loadUserData(username);
+    if (!user || user.password !== password) {
+        return res.status(401).json({ message: 'Authentication failed' });
+    }
+    req.user = user;
+    next();
+};
+
 
 const { v4: uuidv4 } = require('uuid');
 
@@ -108,7 +119,7 @@ app.put('/api/tasks', authenticate, (req, res) => {
 });
 
 app.delete('/api/tasks', authenticate, (req, res) => {
-    const { taskId } = req.body;
+    const { taskId, username, password} = req.body;
     const user = req.user;
     const taskIndex = user.tasks.findIndex(task => task.id === taskId);
 
@@ -122,10 +133,22 @@ app.delete('/api/tasks', authenticate, (req, res) => {
     res.status(200).json({ message: 'Task deleted successfully' });
 });
 
-app.get('/api/tasks', authenticate, (req, res) => {
-    const user = req.user;
-    res.status(200).json(user.tasks);
+app.get('/api/tasks', (req, res) => {
+    const allTasks = [];
+    fs.readdirSync(USERS_DIR).forEach(file => {
+        const userData = loadUserData(file.split('.')[0]);
+        if (userData && userData.tasks) {
+            // Ajoutez le username à chaque tâche
+            userData.tasks.forEach(task => {
+                task.username = userData.username;
+            });
+            allTasks.push(...userData.tasks);
+        }
+    });
+
+    res.status(200).json(allTasks);
 });
+
 
 app.put('/api/users/collaborators', authenticate, (req, res) => {
     const { collaboratorUsername, mode } = req.body;

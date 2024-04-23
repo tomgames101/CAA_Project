@@ -10,12 +10,11 @@ function LoginForm({ onLoginSuccess }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Vérification si l'username existe
         const response = await fetch(`http://localhost:3001/api/users/info/${username}`);
         if (!response.ok) {
             setError('User does not exist. Please sign up.');
         } else {
-            onLoginSuccess(username, password); // Supposant que onLoginSuccess gère la connexion
+            onLoginSuccess(username, password);
         }
     };
 
