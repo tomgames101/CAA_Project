@@ -1,0 +1,22 @@
+{
+  "id": "b0cfb24a-d9c7-4787-8d1b-4c90b62da9e1",
+  "username": "toto",
+  "password": "toto",
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Nouvelle Tâche",
+      "description": "Ceci est une description de la tâche.",
+      "date": "2024-05-01",
+      "startTime": "08:00",
+      "endTime": "09:00",
+      "createdAt": "2024-04-23T07:21:15.010Z"
+    },
+    {
+      "id": 2,
+      "createdAt": "2024-04-23T07:24:20.829Z"
+    }
+  ],
+  "collaborators": [],
+  "createdAt": "2024-04-23T06:50:05.888Z"
+}

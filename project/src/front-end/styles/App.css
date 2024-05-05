@@ -1,0 +1,42 @@
+/* src/styles/App.css */
+.App {
+    text-align: center;
+    margin: 20px;
+}
+
+.App-header {
+    background-color: #282c34;
+    padding: 20px;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    background-color: #61dafb;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #36a9e1;
+}
+/* src/front-end/styles/App.css */
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    height: 100%;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}

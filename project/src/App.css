@@ -1,0 +1,119 @@
+/* App.css */
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidebar {
+  background-color: #333;
+  color: #fff;
+  width: 200px;
+  padding: 20px 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+}
+
+.sidebar ul li:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrez les éléments horizontalement */
+  justify-content: center; /* Centrez les éléments verticalement */
+}
+
+.task {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.task h3 {
+  margin-top: 0;
+}
+
+.task p {
+  margin: 5px 0;
+}
+
+.add-task-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.add-task-button:hover {
+  background-color: #0056b3;
+}
+
+.form-container {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form-container h2 {
+  margin-top: 0;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container input[type="time"],
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.form-container textarea {
+  height: 100px;
+}
+
+.form-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}
